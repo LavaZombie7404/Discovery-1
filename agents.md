@@ -195,3 +195,75 @@ Scripts deploy to:
 - Check content log for errors (Ctrl+H in-game)
 - TypeScript provides type safety for Minecraft APIs
 - Test on Minecraft Preview for latest API features
+
+## Zero-Touch Automation (No GUI Clicks)
+
+Claude can fully automate Minecraft world setup without any GUI interaction.
+
+### World Manager Tool
+
+Located at `tools/world-manager.ts`:
+
+```bash
+# List all worlds
+npx ts-node tools/world-manager.ts list
+
+# Create SRTM terrain world with all settings
+npx ts-node tools/world-manager.ts create-srtm
+
+# Enable cheats in existing world
+npx ts-node tools/world-manager.ts enable-cheats <world-path>
+```
+
+### Key Files for Automation
+
+| File | Purpose |
+|------|---------|
+| `levelname.txt` | World display name |
+| `world_behavior_packs.json` | Behavior packs to load |
+| `world_resource_packs.json` | Resource packs to load |
+| `level.dat` | World settings (binary NBT) |
+
+### Enabling Cheats Programmatically
+
+The `level.dat` file contains settings like `cheatsEnabled` and `commandsEnabled`.
+Use `world-manager.ts enable-cheats` to patch these values.
+
+### Adding Behavior Packs to World
+
+```json
+// world_behavior_packs.json
+[
+  {
+    "pack_id": "uuid-of-behavior-pack",
+    "version": [1, 0, 0]
+  }
+]
+```
+
+### Creating Worlds
+
+1. Clone an existing world as template
+2. Update `levelname.txt`
+3. Configure `world_behavior_packs.json`
+4. Patch `level.dat` for cheats/settings
+5. Restart Minecraft
+
+### com.mojang Location (This Installation)
+
+**IMPORTANT:** This uses Minecraft Bedrock Launcher (not UWP Store version).
+
+```
+%APPDATA%\Minecraft Bedrock\Users\<USER_ID>\games\com.mojang\
+```
+
+### Pack Locations
+
+```
+com.mojang/
+├── behavior_packs/              # Installed behavior packs
+├── development_behavior_packs/  # Development packs (hot reload)
+├── resource_packs/              # Installed resource packs
+├── development_resource_packs/  # Development resource packs
+└── minecraftWorlds/             # World saves
+```

@@ -360,3 +360,12 @@ MigrationBackup/
 # Temp folders
 temp_samples/
 nul
+# Large data files
+data/srtm/*.hgt
+data/srtm/*.hgt.zip
+data/srtm/*.tif
+data/srtm/*.tfw
+data/srtm/*.hdr
+data/terrain/
+moldova_terrain.mcpack
+temp_pack/
