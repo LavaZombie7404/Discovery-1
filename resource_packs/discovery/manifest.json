@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Discovery-1 Resource Pack",
+    "description": "Discovery-1 resources and assets",
+    "uuid": "f1e2d3c4-b5a6-4798-8a9b-0c1d2e3f4a5b",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "description": "Discovery-1 Resources",
+      "type": "resources",
+      "uuid": "b5a6f1e2-d3c4-9847-b9a8-5b4a3f2e1d0c",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "version": [1, 0, 0]
+    }
+  ]
+}
