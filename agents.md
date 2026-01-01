@@ -1,5 +1,14 @@
 # Discovery-1 Development Guide
 
+## Agent Permissions
+
+Claude can run these commands automatically when needed:
+- `npm run local-deploy -- --watch` - Start hot-reload development server
+- `npm run build` - Compile TypeScript
+- `npm run lint` - Check code quality
+- `npx just-scripts mcaddon` - Create distributable package
+- VS Code debugger control for debugging scripts
+
 ## Language Recommendation: TypeScript vs C++
 
 ### Recommendation: TypeScript

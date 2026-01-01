@@ -5,7 +5,7 @@
     "description": "Discovery-1 resources and assets",
     "uuid": "f1e2d3c4-b5a6-4798-8a9b-0c1d2e3f4a5b",
     "version": [1, 0, 0],
-    "min_engine_version": [1, 21, 0]
+    "min_engine_version": [1, 20, 0]
   },
   "modules": [
     {

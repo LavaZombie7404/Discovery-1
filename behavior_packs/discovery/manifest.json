@@ -1,18 +1,18 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Discovery-1 Behavior Pack",
-    "description": "Discovery-1 Minecraft Bedrock scripting project",
-    "uuid": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "name": "Discovery-1",
+    "description": "Discovery-1 Scripting Project",
+    "uuid": "a409d006-b745-4d21-a7b9-26b2afcf9090",
     "version": [1, 0, 0],
-    "min_engine_version": [1, 21, 0]
+    "min_engine_version": [1, 19, 0]
   },
   "modules": [
     {
       "description": "Discovery-1 Scripts",
       "language": "javascript",
       "type": "script",
-      "uuid": "d4c3b2a1-6f5e-b7a4-d9c8-5d4c3b2a1e0f",
+      "uuid": "e7a5caca-e4ef-4691-be94-c47b3b25f740",
       "version": [1, 0, 0],
       "entry": "scripts/main.js"
     }
@@ -20,11 +20,7 @@
   "dependencies": [
     {
       "module_name": "@minecraft/server",
-      "version": "2.0.0"
-    },
-    {
-      "module_name": "@minecraft/server-ui",
-      "version": "2.0.0"
+      "version": "1.9.0"
     }
   ]
 }
