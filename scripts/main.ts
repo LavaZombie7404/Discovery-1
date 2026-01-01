@@ -1,23 +1,49 @@
-import { world, system } from "@minecraft/server";
+import { world, system, Player } from "@minecraft/server";
 
 /**
  * Discovery-1 - Minecraft Bedrock Scripting Project
+ * By LavaZombie7404
  */
+
+// Banner lines with fire gradient colors
+const BANNER = [
+  "§8§m                                                  §r",
+  "",
+  "  §6§l🔥 §c█░░ §6█▀█ §e█░█ §a█▀█ §b▀▀█ §9█▀█ §d█▄█ §c█▀▄ §6█ §e█▀▀ §6§l🔥",
+  "  §6§l   §c█░░ §6█▀█ §e▀▄▀ §a█▀█ §b▄▀░ §9█░█ §d█░█ §c█▀▄ §6█ §e█▀▀",
+  "  §6§l   §c▀▀▀ §6▀░▀ §e░▀░ §a▀░▀ §b▀▀▀ §9▀▀▀ §d▀░▀ §c▀▀░ §6▀ §e▀▀▀",
+  "",
+  "         §e§l✦ §6§lL A V A Z O M B I E 7 4 0 4 §e§l✦",
+  "",
+  "  §8§m                                                  §r",
+  "",
+  "      §b§lDISCOVERY-1 §r§7» §fExplore. Create. Conquer.",
+  "",
+  "§8§m                                                  §r",
+];
+
+/**
+ * Shows the welcome banner to a player
+ */
+function showBanner(player: Player): void {
+  for (const line of BANNER) {
+    player.sendMessage(line);
+  }
+  player.playSound("random.levelup");
+}
 
 // Called when a player spawns
 world.afterEvents.playerSpawn.subscribe((event) => {
   if (event.initialSpawn) {
-    event.player.sendMessage("§aWelcome to Discovery-1!");
+    // Delay banner slightly for dramatic effect
+    system.runTimeout(() => {
+      showBanner(event.player);
+    }, 20); // 1 second delay
   }
 });
 
-// Main game loop
+// Main game loop (remove tick spam, keep for future use)
 function mainTick() {
-  if (system.currentTick % 200 === 0) {
-    // Runs every 10 seconds (200 ticks)
-    world.sendMessage("§7[Discovery-1] Tick: " + system.currentTick);
-  }
-
   system.run(mainTick);
 }
 
